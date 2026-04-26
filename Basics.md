@@ -21,6 +21,16 @@ Key Point:
 - It does not "know" facts like a database
 - It predicts based on patterns learned during training
 
+### Where LLM Runs ?
+
+LLMs run on remote servers provided by companies like Google, OpenAI, or Groq.
+
+We access them using APIs.
+
+Key Point:
+- The model is not running locally
+- API acts as a communication bridge
+
 ## Invocation
 
 Invocation means sending input to the LLM and receiving a response.
@@ -34,3 +44,15 @@ Like asking a question to a person and getting an answer.
 Key Point:
 - It connects our code to the LLM
 - It triggers the model to generate output
+
+## Why Not Use LLM Directly ?
+
+Using LLM directly via API can lead to:
+- No structure
+- Repetitive code
+- Difficult to manage workflows
+
+LangChain solves this by:
+- Providing structure
+- Managing prompts
+- Supporting chains and memory
