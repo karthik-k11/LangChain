@@ -6,6 +6,6 @@ A Large Language Model is a system trained on huge text data that generates resp
 
 ## LangChain
 
-LangChain is a framework that helps organize how we use LLMs in applications.
+LangChain is a framework used to build applications with LLMs by organizing workflows such as prompt management, chaining multiple steps, maintaining memory, and enabling tool usage.
 
 It provides structure like prompts, chains, memory, etc.
