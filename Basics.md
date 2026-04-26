@@ -1,9 +1,6 @@
 ## LLM
 
-LLM is a model that generates text by predicting next words based on input.
-
-Real-world analogy:
-Like a person who has read a lot and answers based on patterns.
+A Large Language Model is a system trained on huge text data that generates responses by predicting the next sequence of words based on input. It can perform tasks like answering questions, summarizing, and explaining concepts.
 
 ---
 
