@@ -12,5 +12,5 @@ llm = ChatGoogleGenerativeAI(
 ##Sending prompt to model
 response= llm.invoke("What is Artificial Intelligence ?")
 
-##Print the generated text
+##Print the generated text, .content is for extracting the plain text from the response
 print(response.content)
