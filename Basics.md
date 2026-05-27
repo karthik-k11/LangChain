@@ -56,3 +56,63 @@ LangChain solves this by:
 - Providing structure
 - Managing prompts
 - Supporting chains and memory
+
+## Prompt Template
+
+Prompt Template is a reusable prompt structure containing placeholders.
+
+Example:
+"Explain {topic} in simple words"
+
+Here:
+{topic} is a placeholder.
+
+Benefits:
+- reusable
+- reduces repetition
+- easier maintenance
+- consistency
+
+## input_variables
+
+input_variables tells LangChain which placeholders are expected inside the template.
+
+Example:
+template="Explain {topic}"
+
+input_variables=["topic"]
+
+This helps LangChain validate and organize prompt inputs properly.
+
+## format()
+
+.format() replaces placeholders dynamically with actual values.
+
+Example:
+
+Before formatting:
+"Explain {topic}"
+
+After formatting:
+"Explain AI"
+
+## Modular Architecture
+
+Modern LangChain uses modular architecture by separating functionality into different packages.
+
+Examples:
+- langchain_core
+- langchain_google_genai
+- langchain_openai
+
+Benefits:
+- cleaner structure
+- scalability
+- easier maintenance
+- reusable modules
+
+# Langchain Definition: 
+
+LangChain helps organize and structure interactions with LLMs instead of making raw API calls directly.
+
+It provides reusable workflows using prompts, templates, chains, memory, and agents.
