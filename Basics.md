@@ -96,21 +96,6 @@ Before formatting:
 After formatting:
 "Explain AI"
 
-## Modular Architecture
-
-Modern LangChain uses modular architecture by separating functionality into different packages.
-
-Examples:
-- langchain_core
-- langchain_google_genai
-- langchain_openai
-
-Benefits:
-- cleaner structure
-- scalability
-- easier maintenance
-- reusable modules
-
 # Langchain Definition: 
 
 LangChain helps organize and structure interactions with LLMs instead of making raw API calls directly.
