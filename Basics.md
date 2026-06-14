@@ -101,3 +101,5 @@ After formatting:
 LangChain helps organize and structure interactions with LLMs instead of making raw API calls directly.
 
 It provides reusable workflows using prompts, templates, chains, memory, and agents.
+
+Langchain acts as the bridge between the LLM and outside sources (like pdf, general interne, etc..)
