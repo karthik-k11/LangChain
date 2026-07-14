@@ -126,4 +126,58 @@ Using an LLM directly through API calls can lead to:
 - Difficult maintenance
 - Less reusable workflows
 
+<<<<<<< HEAD
 LangChain solves these problems by providing reusable components such as prompts, chains, memory, tools, and agents.
+=======
+LangChain solves this by:
+- Providing structure
+- Managing prompts
+- Supporting chains and memory
+
+## Prompt Template
+
+Prompt Template is a reusable prompt structure containing placeholders.
+
+Example:
+"Explain {topic} in simple words"
+
+Here:
+{topic} is a placeholder.
+
+Benefits:
+- reusable
+- reduces repetition
+- easier maintenance
+- consistency
+
+## input_variables
+
+input_variables tells LangChain which placeholders are expected inside the template.
+
+Example:
+template="Explain {topic}"
+
+input_variables=["topic"]
+
+This helps LangChain validate and organize prompt inputs properly.
+
+## format()
+
+.format() replaces placeholders dynamically with actual values.
+
+Example:
+
+Before formatting:
+"Explain {topic}"
+
+After formatting:
+"Explain AI"
+
+# Langchain Definition: 
+
+LangChain helps organize and structure interactions with LLMs instead of making raw API calls directly.
+
+It provides reusable workflows using prompts, templates, chains, memory, and agents.
+
+Langchain acts as the bridge between the LLM and outside sources (like pdf, general interne, etc..)
+>>>>>>> f92036c43e48283e55cfe23192128b5c3b74f502
