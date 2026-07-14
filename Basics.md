@@ -1,103 +1,129 @@
+# Basics
+
 ## LLM
 
-A Large Language Model is a system trained on huge text data that generates responses by predicting the next sequence of words based on input. It can perform tasks like answering questions, summarizing, and explaining concepts.
+A Large Language Model (LLM) is a system trained on a huge amount of text data that generates responses by predicting the next sequence of words based on the given input.
+
+It can perform tasks such as:
+- Answering questions
+- Summarizing text
+- Explaining concepts
+- Generating content
 
 ---
 
 ## LangChain
 
-LangChain is a framework used to build applications with LLMs by organizing workflows such as prompt management, chaining multiple steps, maintaining memory, and enabling tool usage.
+LangChain is a framework used to build applications with Large Language Models (LLMs). It provides a structured way to interact with LLMs by offering components such as prompts, chains, memory, tools, and agents.
 
-It provides structure like prompts, chains, memory, etc.
+Instead of making raw API calls everywhere in the application, LangChain helps organize the workflow into reusable and maintainable components.
 
-### How LLM Works ?
+---
+
+## How LLM Works
 
 An LLM generates text by predicting the next sequence of words based on the given input.
 
-Flow:
-Input → Model processes → Output
+### Flow
 
-Key Point:
-- It does not "know" facts like a database
-- It predicts based on patterns learned during training
+Input
 
-### Where LLM Runs ?
+↓
 
-LLMs run on remote servers provided by companies like Google, OpenAI, or Groq.
+Model processes the input
 
-We access them using APIs.
+↓
 
-Key Point:
-- The model is not running locally
-- API acts as a communication bridge
+Generated Output
+
+### Key Points
+
+- An LLM does not "know" facts like a database.
+- It generates responses by predicting patterns learned during training.
+- The quality of the output depends on the input provided.
+
+---
+
+## Where LLM Runs
+
+LLMs run on remote servers provided by companies such as Google, OpenAI, or Groq.
+
+Our application communicates with those models through APIs.
+
+### Key Points
+
+- The model does not run on our local computer.
+- APIs act as the communication bridge between our application and the LLM.
+
+---
 
 ## Invocation
 
-Invocation means sending input to the LLM and receiving a response.
+Invocation means sending an input to the LLM and receiving a generated response.
 
-In LangChain:
-.invoke() is used to call the model.
+In LangChain, `.invoke()` is commonly used to communicate with the model.
 
-Analogy:
-Like asking a question to a person and getting an answer.
+### Real-world Analogy
 
-Key Point:
-- It connects our code to the LLM
-- It triggers the model to generate output
+Imagine asking a question to a teacher.
 
-## Why Not Use LLM Directly ?
+You ask the question.
 
-Using LLM directly via API can lead to:
-- No structure
+↓
+
+The teacher thinks.
+
+↓
+
+The teacher gives the answer.
+
+Similarly, `.invoke()` sends the prompt to the model and returns the response.
+
+### Key Points
+
+- `.invoke()` sends our input to the model.
+- The model processes the request.
+- LangChain returns a response object.
+
+---
+
+## Response Object
+
+LangChain does not return only plain text.
+
+Instead, it returns a response object that contains additional information such as:
+
+- Generated content
+- Metadata
+- Model information
+- Token usage
+- Response ID
+
+This information is useful for debugging, monitoring, logging, and tracking API usage.
+
+---
+
+## Why do we use `.content`?
+
+The response returned by LangChain is an object.
+
+To display only the generated answer, we use:
+
+```python
+response.content
+```
+
+Without `.content`, the entire response object is printed, including metadata and other information.
+
+---
+
+## Why Not Use LLM Directly?
+
+Using an LLM directly through API calls can lead to:
+
 - Repetitive code
-- Difficult to manage workflows
+- Poor structure
+- Difficult maintenance
+- Less reusable workflows
 
-LangChain solves this by:
-- Providing structure
-- Managing prompts
-- Supporting chains and memory
-
-## Prompt Template
-
-Prompt Template is a reusable prompt structure containing placeholders.
-
-Example:
-"Explain {topic} in simple words"
-
-Here:
-{topic} is a placeholder.
-
-Benefits:
-- reusable
-- reduces repetition
-- easier maintenance
-- consistency
-
-## input_variables
-
-input_variables tells LangChain which placeholders are expected inside the template.
-
-Example:
-template="Explain {topic}"
-
-input_variables=["topic"]
-
-This helps LangChain validate and organize prompt inputs properly.
-
-## format()
-
-.format() replaces placeholders dynamically with actual values.
-
-Example:
-
-Before formatting:
-"Explain {topic}"
-
-After formatting:
-"Explain AI"
-
-# Langchain Definition: 
-
-LangChain helps organize and structure interactions with LLMs instead of making raw API calls directly.
-
-It provides reusable workflows using prompts, templates, chains, memory, and agents.
+LangChain solves these problems by providing reusable components such as prompts, chains, memory, tools, and agents.
